@@ -9,7 +9,7 @@ function CreateUser() {
     const navigate = useNavigate();
     const Submit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:8080/createUser', { name, email, age })
+        axios.post('http://localhost:8080/createUser', { name, email, age }, { withCredentials: true })
             .then(result => {
                 console.log(result.data)
                 navigate('/user');

@@ -7,13 +7,13 @@ function Users() {
 
     useEffect(() => {
 
-        axios.get('http://localhost:8080')
+        axios.get('http://localhost:8080', { withCredentials: true })
             .then(result => setUsers(result.data))
             .catch(err => console.log(err));
     }, []);
 
     const handleDelete = (id) => {
-        axios.delete(`http://localhost:8080/deleteUser/${id}`)
+        axios.delete(`http://localhost:8080/deleteUser/${id}`, { withCredentials: true, })
             .then(res => {
                 console.log(res)
                 window.location.reload();
